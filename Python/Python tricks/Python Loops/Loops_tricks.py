@@ -15,9 +15,5 @@ impares  = [1,3,5]
 for a, b in zip (impares, pares):
  print(a,b)
 
-#Imprime
-#1,2
-#3,4
-#5,6  
 
 #More: https://docs.python.org/3/tutorial/datastructures.html#looping-techniques
