@@ -79,15 +79,28 @@ def check_for_name(sentence, name):
       return True
   return False
 
+#another form
+
+def check_for_name_2(sentence, name):
+ lower_sentence = sentence.lower()
+ lower_name = name.lower()
+ split_sentence = lower_sentence.split(lower_name)
+ if len(split_sentence)  < 2:
+  return False
+ return True
+
 # Uncomment these function calls to test your  function:
 #print(check_for_name("My name is Jamie", "Jamie"))
+#print(check_for_name_2("My name is Jamie", "Jamie"))
 # should print True
 #print(check_for_name("My name is jamie", "Jamie"))
+#print(check_for_name_2("My name is jamie", "Jamie"))
 # should print True
 #print(check_for_name("My name is Samantha", "Jamie"))
+#print(check_for_name_2("My name is Samantha", "Jamie"))
 # should print False
 
-#-----------------------------------------------------------------------------
+#------------------------------- Example #3 ------------------------------------
 # The function should return a string containing every other letter in word
 
 def every_other_letter(word):
@@ -96,10 +109,106 @@ def every_other_letter(word):
         new_word += (word[i])
     return new_word
 # Uncomment these function calls to test your function:
-print(every_other_letter("Codecademy"))
+#print(every_other_letter("Codecademy"))
 # should print Cdcdm
-print(every_other_letter("Hello world!"))
+#print(every_other_letter("Hello world!"))
 # should print Hlowrd
-print(every_other_letter(""))
+#print(every_other_letter(""))
 # should print
 
+#------------------------------- Example #4 ------------------------------------
+# The function should return a string containing every other letter in word
+
+def every_other_letter(word):
+ every_other_word = ''
+ for i in range(0, len(word), 2):
+  every_other_word += word[i]
+ return every_other_word
+
+# Uncomment these function calls to test your function:
+#print(every_other_letter("Codecademy"))
+# should print Cdcdm
+#print(every_other_letter("Hello world!"))
+# should print Hlowrd
+#print(every_other_letter(""))
+# should print
+
+#------------------------------- Example #5 ------------------------------------
+#The function should return word in reverse
+
+def reverse_string(word):
+  reverse_word = ''
+  for i in range(len(word)-1, -1, -1):
+    reverse_word += word[i]
+  return reverse_word
+
+
+# Uncomment these function calls to test your  function:
+#print(reverse_string("Codecademy"))
+# should print ymedacedoC
+#print(reverse_string("Hello world!"))
+# should print !dlrow olleH
+#print(reverse_string(""))
+# should print
+
+
+#------------------------------ Example #6 --------------------------------------
+
+#Finding the first syllable of a word is a difficult task, so for our function,
+# we’re going to switch the first letters of each word. Return the two new words 
+# as a single string separated by a space.
+
+
+def make_spoonerism(word1, word2):
+  first_letter_of_w1 = word1[0]
+  first_letter_of_w2 = word2[0]
+  w1_a = word1.replace(word1[0], first_letter_of_w2)
+  w2_a = word2.replace(word2[0],first_letter_of_w1)
+  return w1_a, w2_a
+# Uncomment these function calls to test your function:
+#print(make_spoonerism("Codecademy", "Learn"))
+# should print Lodecademy Cearn
+#print(make_spoonerism("Hello", "world!"))
+# should print wello Horld!
+#print(make_spoonerism("a", "b"))
+# should print b a
+
+#------------------------------ Example #7 --------------------------------------
+
+# This function should add exclamation points to the end of word until word is 
+# 20 characters long. If word is already at least 20 characters long, just return word.
+
+def add_exclamation(word):
+  count = 0
+  exclamation = ''
+  word_m = ''
+  if len(word) <= 20:
+    while count < len(word):
+      exclamation += '!'
+      print('Hola' , count)
+      count += 1
+    word_m = word + exclamation
+    return word_m
+  return word
+
+# Write your add_exclamation function here:
+
+
+def add_exclamation(word):
+  count = 0
+  exclamation = ''
+  word_m = ''
+  if len(word) <= 20:
+    while count < len(word):
+      exclamation += '!'
+      print('Hola' , count)
+      count += 1
+    word_m = word + exclamation
+    return word_m
+  return word
+
+# Uncomment these function calls to test your function:
+#print(add_exclamation("Codecademy"))
+# should print Codecademy!!!!!!!!!!
+#print(add_exclamation("Codecademy is the best place to learn"))
+# should print Codecademy is the best place to learn
