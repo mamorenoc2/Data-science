@@ -50,5 +50,54 @@ numbers_3_l = ['uno', 'dos', 'tres']
 numbers_3_n = [1,2,3]
 
 unit_of_list = {key:value for key, value in zip(numbers_3_l, numbers_3_n)}
-print(unit_of_list)
+#print(unit_of_list)
 
+
+#------------------------------------------- PRINT VALUES  ------------------------------------------#
+
+numbers_4 ={'Pares': [2,4,6,8], 'Impares':[1,3,5,7]}
+#print(numbers_4['Pares'])
+
+
+#--------------------------------------------  TRY / EXCEPT  -----------------------------------------#
+
+building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601,
+                    "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
+key_to_check = "Landmark 81"
+try:
+  print(building_heights[key_to_check])
+except KeyError:
+  print("That key doesn't exist!")
+
+
+#----------------------------------------------  GET  ----------------------------------------------#
+#Dictionaries have a .get() method to search for a value instead of the my_dict[key] notation.
+# If the key you are trying to .get() does not exist, it will return None
+
+building_heights = {"Burj Khalifa": 828, "Shanghai Tower": 632, "Abraj Al Bait": 601,
+                    "Ping An": 599, "Lotte World Tower": 554.5, "One World Trade": 541.3}
+
+#this line will return 632:
+#print(building_heights.get("Shanghai Tower"))
+
+#this line will return None:
+#print(building_heights.get("My House"))
+
+
+#You can also specify a value to return if the key doesn’t exist. 
+#print(building_heights.get('Kilimanjaro', 'No Value'))
+#print(building_heights.get('Kilimanjaro', 0))
+
+
+#----------------------------------------------  POP  ----------------------------------------------#
+#Use .pop() to return the value and also remove that pair from the dictionary
+#Just like with .get(), we can provide a default value to return if the key does not exist in the dictionary
+
+numbers_5 = {'uno':1, 'dos':2, 'tres':3, 'cuatro':4, 'cinco':5}
+# print(numbers_5)
+# print(numbers_5.pop('cinco', 'no existe'))
+# print(numbers_5)
+
+#------------------------------------PRINT MULTIPLE DICT KEYS ---------------------------------------#
+
+#Dictionaries also have a .keys() method that returns a dict_keys object. A dict_keys object is a view object, which provides a look at the current state of the dictionary, without the user being able to modify anything. The dict_keys object returned by .keys() is a set of the keys in the dictionary. You cannot add or remove elements from a dict_keys object, but it can be used in the place of a list for iteration:
