@@ -39,7 +39,7 @@ numbers_2 = {'uno': 1, 'dos': 6}
 numbers_2['dos'] = 2
 #print('This is', numbers_2, 'after')
 
-#------------------------------------------- LIST COMPREHENSIONS  ------------------------------------------#
+#---------------------------------- LIST COMPREHENSIONS AND LOOPS ------------------------------------------#
 
 #Let’s say we have two lists that we want to combine into a dictionary,
 #Python allows you to create a dictionary using a list comprehension, with this syntax:
@@ -51,6 +51,19 @@ numbers_3_n = [1,2,3]
 
 unit_of_list = {key:value for key, value in zip(numbers_3_l, numbers_3_n)}
 #print(unit_of_list)
+
+#In loop:
+
+ist_numbers = [1,2,3,4]
+list_n=['one', 'two','three', 'four']
+list_numero = ['Primero', 'Segundo', 'Tercero']
+list_zip_numbers = list(zip(list_n,list_numbers))
+dict_numbers = {}
+for key, values in zip(list_zip_numbers, list_numero):
+  if key != 1:
+    dict_numbers.update({key:values})
+#print(dict_numbers)
+
 
 
 #------------------------------------------- PRINT VALUES  ------------------------------------------#
