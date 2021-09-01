@@ -61,3 +61,29 @@ def update_damage(damages):
 # test function by updating damages
 update_damage(damages)
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 2- Additional data collected on the 34 strongest Atlantic hurricanes are provided in a series of lists. The data includes:
+#     names: names of the hurricanes
+#     months: months in which the hurricanes occurred
+#     years: years in which the hurricanes occurred
+#     max_sustained_winds: maximum sustained winds (miles per hour) of the hurricanes
+#     areas_affected: list of different areas affected by each of the hurricanes
+#     deaths: total number of deaths caused by each of the hurricanes
+# The data is organized such that the data at each index, from 0 to 33, corresponds to the same hurricane.
+# For example, names[0] yields the “Cuba I” hurricane, which ouccred in months[0] (October) years[0] (1924).
+# Write a function that constructs a dictionary made out of the lists, where the keys of the dictionary are the names of the hurricanes, 
+# and the values are dictionaries themselves containing a key for each piece of data (Name, Month, Year,Max Sustained Wind, Areas Affected, 
+# Damage, Death) about the hurricane.
+# Example:
+# Thus the key "Cuba I" would have the value: {'Name': 'Cuba I', 'Month': 'October', 'Year': 1924, 'Max Sustained Wind': 165,
+# 'Areas Affected': ['Central America', 'Mexico', 'Cuba', 'Florida', 'The Bahamas'], 'Damage': 'Damages not recorded', 'Deaths': 90}.
+#Test your function on the lists of data provided.
+
+# Create a Table
+hurracanes_list = []
+hurracanes_list = list(zip(months, years, max_sustained_winds, areas_affected, new_damages, deaths))
+# Create and view the hurricanes dictionary
+hurricanes_dict_names = {}
+hurricanes_dict_names = {key:value for key, value in zip(names, hurracanes_list)}
+#print(hurricanes_dict_names)
+
