@@ -87,3 +87,35 @@ hurricanes_dict_names = {}
 hurricanes_dict_names = {key:value for key, value in zip(names, hurracanes_list)}
 #print(hurricanes_dict_names)
 
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# In addition to organizing the hurricanes in a dictionary with names as the key, you want to be able to organize the hurricanes by year.
+# Write a function that converts the current dictionary of hurricanes to a new dictionary, where the keys are years and the values are lists 
+# containing a dictionary for each hurricane that occurred in that year.
+# For example:
+# the key 1932 would yield the value: 
+# [{'Name': 'Bahamas', 'Month': 'September', 'Year': 1932, 'Max Sustained Wind': 160, 'Areas Affected': ['The Bahamas', 'Northeastern United States'], 'Damage': 'Damages not recorded', 'Deaths': 16}, {'Name': 'Cuba II', 'Month': 'November', 'Year': 1932, 'Max Sustained Wind': 175, 'Areas Affected': ['Lesser Antilles', 'Jamaica', 'Cayman Islands', 'Cuba', 'The Bahamas', 'Bermuda'], 'Damage': 40000000.0, 'Deaths': 3103}].
+
+
+# Organizing by Year
+hurricanes_list_2 = []
+hurricanes_list_2 = list(zip(names, months, years, max_sustained_winds, areas_affected, new_damages, deaths))
+
+# create a new dictionary of hurricanes with year and key
+hurricanes_dict_years = {}
+
+# Add / Append values to an existing key to a dictionary in python
+
+for key, value in zip(years, hurricanes_list_2):
+  # Check if key exist in dict or not
+  if key in hurricanes_dict_years.keys():
+    # Key exist in dict.
+    # Check if type of value of key is list or not
+    if not isinstance(hurricanes_dict_years[key], list):
+      # If type is not list then make it list
+      hurricanes_dict_years[key] = [hurricanes_dict_years[key]]
+    # Append the value in list
+    hurricanes_dict_years[key].append(value)
+  else:
+    hurricanes_dict_years.update({key:value})
+
+print(hurricanes_dict_years)
