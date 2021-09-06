@@ -88,7 +88,7 @@ hurricanes_dict_names = {key:value for key, value in zip(names, hurracanes_list)
 #print(hurricanes_dict_names)
 
 #-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# In addition to organizing the hurricanes in a dictionary with names as the key, you want to be able to organize the hurricanes by year.
+# 3. In addition to organizing the hurricanes in a dictionary with names as the key, you want to be able to organize the hurricanes by year.
 # Write a function that converts the current dictionary of hurricanes to a new dictionary, where the keys are years and the values are lists 
 # containing a dictionary for each hurricane that occurred in that year.
 # For example:
@@ -118,4 +118,33 @@ for key, value in zip(years, hurricanes_list_2):
   else:
     hurricanes_dict_years.update({key:value})
 
-print(hurricanes_dict_years)
+#print(hurricanes_dict_years)
+
+#----------------------------------------------------------  Counting Damaged Areas --------------------------------------------------------------------------------------------------------------------------------------
+# 4. You believe that knowing how often each of the areas of the Atlantic are affected by these strong hurricanes is important for making 
+# preparations for future hurricanes.
+# Write a function that counts how often each area is listed as an affected area of a hurricane. Store and return the results in a dictionary
+# where the keys are the affected areas and the values are counts of how many times the areas were affected.
+
+list_areas_affected = []
+list_of_n_areas_affected = []
+n_area_affected = 1
+
+for i in areas_affected:
+  list_areas_affected += i
+
+for i in range(0, len(list_areas_affected)):
+  list_of_n_areas_affected.append(1)
+
+#print(list_of_n_areas_affected)
+
+# create dictionary of areas to store the number of hurricanes involved in
+dict_areas_affected={}
+
+for key, value in zip(list_areas_affected,list_of_n_areas_affected):
+  if key in dict_areas_affected.keys():
+    value += 1
+    dict_areas_affected.update({key:value})
+  else:
+    dict_areas_affected.update({key:value})
+#print(dict_areas_affected)
