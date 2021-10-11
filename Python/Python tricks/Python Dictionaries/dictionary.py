@@ -100,4 +100,31 @@ numbers_5 = {'uno':1, 'dos':2, 'tres':3, 'cuatro':4, 'cinco':5}
 
 #------------------------------------PRINT MULTIPLE DICT KEYS ---------------------------------------#
 
-#Dictionaries also have a .keys() method that returns a dict_keys object. A dict_keys object is a view object, which provides a look at the current state of the dictionary, without the user being able to modify anything. The dict_keys object returned by .keys() is a set of the keys in the dictionary. You cannot add or remove elements from a dict_keys object, but it can be used in the place of a list for iteration:
+#Dictionaries also have a .keys() method that returns a dict_keys object. A dict_keys object is a view object, 
+#which provides a look at the current state of the dictionary, without the user being able to modify anything. 
+#The dict_keys object returned by .keys() is a set of the keys in the dictionary. 
+#You cannot add or remove elements from a dict_keys object, but it can be used in the place of a list for iteration:
+
+user_ids = {"teraCoder": 100019, "pythonGuy": 182921, "samTheJavaMaam": 123112, "lyleLoop": 102931, "keysmithKeith": 129384}
+num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+
+users = user_ids.keys()
+
+
+#------------------------------------PRINT MULTIPLE DICT VALUES ---------------------------------------#
+
+#Dictionaries have a .values() method that returns a dict_values object (just like a dict_keys object 
+#but for values!) with all of the values in the dictionary
+
+num_exercises = {"functions": 10, "syntax": 13, "control flow": 15, "loops": 22, "lists": 19, "classes": 18, "dictionaries": 18}
+total_exercises = 0
+for i in num_exercises.values():
+  total_exercises += i
+print(total_exercises) 
+
+#------------------------------------PRINT MULTIPLE DICT ITEMS ---------------------------------------#
+
+#You can get both the keys and the values with the .items() method. Like .keys() and .values(),
+#  it returns a dict_list object. Each element of the dict_list returned by .items()
+
+
