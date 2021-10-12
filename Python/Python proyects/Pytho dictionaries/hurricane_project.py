@@ -68,24 +68,43 @@ def hurricanes_dictionary_data(names, months, years, max_sustained_winds, areas_
 
 hurricanes_dictionary = hurricanes_dictionary_data(
     names, months, years, max_sustained_winds, areas_affected, damages, deaths)
-print(hurricanes_dictionary)
+#cls
+# print(hurricanes_dictionary)
     
 
 # write your construct hurricane by year dictionary function here:
 
 def convert_names_to_years(hurricanes_dictionary):
-    hurricanes_dictionary_years = {}
-    num_i = len(names)
-    for i in range(num_i):
-        hurricanes_dictionary_years[years[i]] = {hurricanes_dictionary.copy()}
-    return hurricanes_dictionary_years
+    hurricanes_dictionary_by_years = {}
+    for cane in hurricanes_dictionary:
+        current_year = hurricanes_dictionary[cane]['Year']
+        current_hurricane_data = hurricanes_dictionary[cane]
+        if current_year not in hurricanes_dictionary_by_years:
+            hurricanes_dictionary_by_years[current_year] = [current_hurricane_data]
+        else:
+            hurricanes_dictionary_by_years[current_year].append(
+                current_hurricane_data)
+    return hurricanes_dictionary_by_years
 
 hurricanes_dictionary_years = convert_names_to_years(hurricanes_dictionary)
-print(hurricanes_dictionary_years)
+#print(hurricanes_dictionary_years)
 
 # write your count affected areas function here:
 
 
+def hurricane_affected_areas(hurricanes_dictionary):
+    hurricane_dictionary_affected_areas = {}
+    for cane in hurricanes_dictionary:
+        for area_affected in hurricanes_dictionary[cane]['Areas Afected']:
+            if area_affected not in hurricane_dictionary_affected_areas:
+                hurricane_dictionary_affected_areas[area_affected] = 1
+            else:
+                hurricane_dictionary_affected_areas[area_affected] += 1
+    return hurricane_dictionary_affected_areas
+
+
+hurricanes_affected_areas = hurricane_affected_areas(hurricanes_dictionary)
+print(hurricanes_affected_areas)
 # write your find most affected area function here:
 
 
