@@ -1,8 +1,8 @@
 #In this project, It will examine how factors such as age, sex, BMI, number of children, 
-# and smoking status contribute to medical insurance costs.
+#and smoking status contribute to medical insurance costs.
 
 # Function to estimate insurance cost:
-def estimate_insurance_cost(name, age, sex, bmi, num_of_children, smoker):
+def estimate_insurance_cost(name, age, sex, bmi, num_of_children, smoker): 
     estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
     print(name + "'s Estimated Insurance Cost: " + str(estimated_cost) + " dollars.")
     return estimated_cost
@@ -22,4 +22,11 @@ names = ['Maria', 'Rohan', 'Valentina']
 insurance_costs = [4150.0, 5320.0, 35210.0]
 
 insurance_data = list(zip(names, insurance_costs))
+print(insurance_data)
+
+estimated_insurance_data = []
+estimated_insurance_data.append(('Maria', maria_insurance_cost))
+estimated_insurance_data.append(('Rohan', rohan_insurance_cost))
+estimated_insurance_data.append(('Valentina', valentina_insurance_cost))
+
 print(insurance_data)
