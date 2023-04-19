@@ -28,6 +28,18 @@ def count_multi_char_x(word, x):
 #print(count_multi_char_x("apple", "pp"))
 # should print 1
 
+#This funtion return a array of last names of a string with names authors
+authors = "Audre Lorde,Gabriela Mistral,Jean Toomer,An Qi,Walt Whitman,Shel Silverstein,Carmen Boullosa,Kamala Suraiyya,Langston Hughes,Adrienne Rich,Nikki Giovanni"
+
+author_name = authors.split(',')
+author_last_name = []
+for name in author_name:
+  author_last_name.append(name.split()[-1])
+
+#print(author_last_name)
+#should print ['Lorde', 'Mistral', 'Toomer', 'Qi', 'Whitman', 'Silverstein', 'Boullosa', 'Suraiyya', 'Hughes', 'Rich', 'Giovanni']
+
+
 # ----------------------------------    FIND()     ----------------------------------------
 #This funtion return the substring between the first occurrence of start and end in word.
 #  If start or end are not in word, the function should return word.
