@@ -36,23 +36,23 @@ def update_damage_data(damages):
 
     conversion = {"M": 1000000, "B": 1000000000}
     update_damages = []
-    
+
     for damage in damages:
         if damage[-1] == "M":
-            
+
             update_damages.append(float(damage.strip('M'))*conversion["M"])
 
         if damage[-1] == 'B':
             update_damages.append(float(damage.strip('B'))*conversion['B'])
-        
+
         if damage == 'Damages not recorded':
             update_damages.append(damage)
-    
+
     return update_damages
-        
+
 
 update_damages = update_damage_data(damages)
-#print(update_damages)
+# print(update_damages)
 
 # write your construct hurricane dictionary function here:
 
@@ -63,14 +63,16 @@ def hurricanes_dictionary_data(names, months, years, max_sustained_winds, areas_
     num_hurricanes = len(names)
 
     for i in range(0, num_hurricanes):
-        hurricanes[names[i]] = {'Name': names[i], 'Year': years[i], 'Max Sustained Wind': max_sustained_winds[i], "Areas Afected": areas_affected[i], 'Damage' : damages[i], 'Deaths': deaths[i]}
+        hurricanes[names[i]] = {'Name': names[i], 'Year': years[i], 'Max Sustained Wind': max_sustained_winds[i],
+                                "Areas Afected": areas_affected[i], 'Damage': damages[i], 'Deaths': deaths[i]}
     return hurricanes
+
 
 hurricanes_dictionary = hurricanes_dictionary_data(
     names, months, years, max_sustained_winds, areas_affected, damages, deaths)
-#cls
+# cls
 # print(hurricanes_dictionary)
-    
+
 
 # write your construct hurricane by year dictionary function here:
 
@@ -80,14 +82,16 @@ def convert_names_to_years(hurricanes_dictionary):
         current_year = hurricanes_dictionary[cane]['Year']
         current_hurricane_data = hurricanes_dictionary[cane]
         if current_year not in hurricanes_dictionary_by_years:
-            hurricanes_dictionary_by_years[current_year] = [current_hurricane_data]
+            hurricanes_dictionary_by_years[current_year] = [
+                current_hurricane_data]
         else:
             hurricanes_dictionary_by_years[current_year].append(
                 current_hurricane_data)
     return hurricanes_dictionary_by_years
 
+
 hurricanes_dictionary_years = convert_names_to_years(hurricanes_dictionary)
-#print(hurricanes_dictionary_years)
+# print(hurricanes_dictionary_years)
 
 # write your count affected areas function here:
 
@@ -104,10 +108,22 @@ def hurricane_affected_areas(hurricanes_dictionary):
 
 
 hurricanes_affected_areas = hurricane_affected_areas(hurricanes_dictionary)
-print(hurricanes_affected_areas)
+# print(hurricanes_affected_areas)
+
 # write your find most affected area function here:
+def most_affected_area(hurricanes_affected_areas):
+    max_num_hurricanes_afected = 0
+    max_hurricanes_afected = ''
+    most_hurricanes_afected = {}
+    for i in hurricanes_affected_areas:
+        if hurricanes_affected_areas[i] > max_num_hurricanes_afected:
+            max_hurricanes_afected = i
+            max_num_hurricanes_afected = hurricanes_affected_areas[i]
+    most_hurricanes_afected[max_hurricanes_afected] = max_num_hurricanes_afected
+    return most_hurricanes_afected
 
-
+most_affected_area = most_affected_area(hurricanes_affected_areas)
+print(most_affected_area)
 # write your greatest number of deaths function here:
 
 
