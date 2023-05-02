@@ -5,4 +5,4 @@ def sum_with_range(min_, max_):
   return suma
 
 resultado = sum_with_range(1, 100)
-print(suma)
+print(resultado)
