@@ -123,8 +123,24 @@ def most_affected_area(hurricanes_affected_areas):
     return most_hurricanes_afected
 
 most_affected_area = most_affected_area(hurricanes_affected_areas)
-print(most_affected_area)
+#print(most_affected_area)
+
 # write your greatest number of deaths function here:
+def most_number_of_deaths(hurricanes_dictionary):
+    deaths = 0
+    hurricane_name = ''
+    most_number_of_deaths_dict = {}
+    for hurricane in hurricanes_dictionary:
+        n_deaths = hurricanes_dictionary[hurricane]['Deaths']
+        if n_deaths > deaths:
+            deaths = n_deaths
+            hurricane_name = hurricanes_dictionary[hurricane]
+    most_number_of_deaths_dict[hurricane_name] = deaths
+    
+    return most_number_of_deaths
+
+most_number_of_deaths = most_number_of_deaths(hurricanes_dictionary)
+print(most_number_of_deaths)
 
 
 # write your catgeorize by mortality function here:
