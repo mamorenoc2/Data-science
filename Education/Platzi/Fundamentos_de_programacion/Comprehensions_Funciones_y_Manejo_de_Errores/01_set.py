@@ -1,5 +1,6 @@
 #Conjuntos
-#Son parecidos a los conjuntos
+#Se pueden modificar pero no tienen un orden especifico y no 
+# se permiten duplicados
 
 set_countries = {'col', 'mex', 'bol'}
 print(set_countries)
@@ -13,6 +14,9 @@ print(set_type)
 
 set_from_string = set('hola')
 print(set_from_string)
+
+set_from_string_2 = set('hoola')
+print(set_from_string_2) #no se modifica
 
 # la podemos crear a partir de una tupla
 set_from_tuples = set (('abc','cbv','as','abc'))
