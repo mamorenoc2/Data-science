@@ -1,4 +1,6 @@
-run = "cowsay Configure me!"
-
+run = "pip install ; python main.py"
 [nix]
+[languages]
+[languages.python]
+pattern = "**/{*.py}"
 channel = "stable-22_11"
